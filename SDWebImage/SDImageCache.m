@@ -368,7 +368,7 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
         }
         return nil;
     }
-
+    
     // First check the in-memory cache...
     UIImage *image = [self imageFromMemoryCacheForKey:key];
     if (image) {
@@ -381,7 +381,7 @@ FOUNDATION_STATIC_INLINE NSUInteger SDCacheCostForImage(UIImage *image) {
         }
         return nil;
     }
-
+    //nscache中没有image
     NSOperation *operation = [NSOperation new];
     dispatch_async(self.ioQueue, ^{
         if (operation.isCancelled) {
