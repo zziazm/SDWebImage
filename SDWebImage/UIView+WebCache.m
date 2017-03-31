@@ -44,7 +44,6 @@ static char TAG_ACTIVITY_SHOW;
             [self sd_setImage:placeholder imageData:nil basedOnClassOrViaCustomSetImageBlock:setImageBlock];
         });
     }
-    
     if (url) {
         // check if activityView is enabled or not
         if ([self sd_showActivityIndicatorView]) {

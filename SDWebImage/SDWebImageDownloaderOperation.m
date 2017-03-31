@@ -138,7 +138,6 @@ typedef NSMutableDictionary<NSString *, id> SDCallbacksDictionary;
 
                 if (sself) {
                     [sself cancel];
-
                     [app endBackgroundTask:sself.backgroundTaskId];
                     sself.backgroundTaskId = UIBackgroundTaskInvalid;
                 }
@@ -206,7 +205,6 @@ typedef NSMutableDictionary<NSString *, id> SDCallbacksDictionary;
         dispatch_async(dispatch_get_main_queue(), ^{
             [[NSNotificationCenter defaultCenter] postNotificationName:SDWebImageDownloadStopNotification object:self];
         });
-
         // As we cancelled the connection, its callback won't be called and thus won't
         // maintain the isFinished and isExecuting flags.
         if (self.isExecuting) self.executing = NO;

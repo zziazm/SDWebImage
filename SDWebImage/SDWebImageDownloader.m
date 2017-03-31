@@ -146,6 +146,7 @@
     __weak SDWebImageDownloader *wself = self;
 
     return [self addProgressCallback:progressBlock completedBlock:completedBlock forURL:url createCallback:^SDWebImageDownloaderOperation *{
+        //下载图片
         __strong __typeof (wself) sself = wself;
         NSTimeInterval timeoutInterval = sself.downloadTimeout;
         if (timeoutInterval == 0.0) {
@@ -162,6 +163,7 @@
         else {
             request.allHTTPHeaderFields = sself.HTTPHeaders;
         }
+        
         SDWebImageDownloaderOperation *operation = [[sself.operationClass alloc] initWithRequest:request inSession:sself.session options:options];
         operation.shouldDecompressImages = sself.shouldDecompressImages;
         
